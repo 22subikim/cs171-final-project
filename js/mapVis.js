@@ -106,13 +106,15 @@ class MapVis {
             .attr('class','tooltip')
             .attr('id','mapTooltip')
 
+        vis.selectedYear = '2019';
+
+        this.createSlider()
         this.wrangleData()
     }
 
     wrangleData() {
         let vis = this
 
-        vis.selectedYear = '2019';
         vis.filteredData = [];
 
         vis.covidData.forEach(row => {
@@ -210,5 +212,39 @@ class MapVis {
 
         vis.svg.select(".x-axis").call(vis.xAxis);
 
+    }
+
+    createSlider() {
+        let vis = this;
+
+        let minVal = d3.min(vis.covidData, d => +d['Year']);
+        let maxVal = d3.max(vis.covidData, d => +d['Year']);
+
+        var slider = document.getElementById('year-slider');
+
+        noUiSlider.create(slider, {
+            start: [maxVal],
+            tooltips: [true],
+            connect: true,
+            range: {
+                'min': parseFloat(minVal),
+                'max': parseFloat(maxVal)
+            },
+            // Source to get int values: https://stackoverflow.com/questions/31631816/nouislider-tooltip-only-show-integers
+            format: {
+                from: function(value) {
+                    return parseInt(value);
+                },
+                to: function(value) {
+                    return parseInt(value);
+                }
+            }
+        });
+
+        slider.noUiSlider.on("slide", function(values, handle) {
+            vis.selectedYear = values[0]
+
+            vis.wrangleData();
+        })
     }
 }
