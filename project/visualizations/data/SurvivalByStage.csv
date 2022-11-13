@@ -1,0 +1,6 @@
+Stage,SurvivalRate,Definition
+InSitu,3.88, Cancer that has not spread yet.
+Localized,73.60, Cancer that is limited to a certain part of the body.
+Regional,56.65, Cancer has grown beyond the original tumor to nearby lymph nodes or organs and tissues.
+Distant,28.96, Cancer that has spread from the original tumor to distant organs or distant lymph nodes.
+Unstaged,50.84, Insufficient information available to determine stage of disease at diagnosis.
