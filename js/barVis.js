@@ -61,7 +61,7 @@ class BarVis {
 
 
         vis.colorScale = d3.scaleSequential()
-            .interpolator(d3.interpolateRgb("#FFFFFF", "#136D70"))
+            .interpolator(d3.interpolateRgb("#FFFFFF", "#88765E"))
 
 
 
@@ -92,7 +92,7 @@ class BarVis {
             .style('fill', function(d,i) {
                 return vis.colorScale(d['SurvivalRate'])
             })
-            .attr('stroke','black')
+            .attr('stroke','')
             .attr('stroke-width', '1px')
             .attr('class','rect')
             .attr('height',d=>vis.height - vis.yScale(d['SurvivalRate']))
@@ -101,7 +101,7 @@ class BarVis {
             .attr('y',d=>vis.yScale(d['SurvivalRate']))
             .on('mouseover', function(event,d) {
                 d3.select(this)
-                    .attr('stroke','black')
+                    .attr('stroke','')
                     .attr('stroke-width', '1px')
                     .style('fill', 'gray')
                 vis.tooltip
@@ -119,7 +119,7 @@ class BarVis {
                     .style("fill", function(d,i) {
                         return vis.colorScale(d['SurvivalRate'])
                     })
-                    .attr('stroke','black')
+                    .attr('stroke','')
                     .attr('stroke-width', '1px')
 
 

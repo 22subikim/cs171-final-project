@@ -18,3 +18,43 @@
 .x-axis, .y-axis {
     font-size: .4em;
 }
+
+body {
+    background-color: #EEEAE1;
+}
+
+h1 {
+    font-size: 36px;
+    color: #E85A50;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #5B4A3F;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    color: #5B4A3F;
+    text-align: center;
+}
+
+h4 {
+    font-size: 16px;
+    color: #5B4A3F;
+    text-align: center;
+}
+
+h5 {
+    font-size: 24px;
+    color: #F8F5F0;
+    text-align: center;
+}
+p {
+    font-family: verdana;
+    font-size: 16px;
+    color:#5B4A3F
+    text-align: center;
+}

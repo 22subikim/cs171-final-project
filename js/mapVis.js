@@ -55,12 +55,12 @@ class MapVis {
             .enter()
             .append('path')
             .attr('class','states')
-            .attr('stroke','black')
+            .attr('stroke','')
             .attr('fill','transparent')
             .attr('d',(d) => vis.path(d))
 
         vis.colorScale = d3.scaleLinear()
-            .range(["#FFFFFF", "#392966"])
+            .range(["#FFFFFF", "#5B4A3F"])
 
         vis.xScale = d3.scaleLinear()
             .range([0,vis.width/4])
@@ -91,7 +91,7 @@ class MapVis {
 
         vis.linearGradient.append('stop')
             .attr("offset", "100%")
-            .style("stop-color", "#392966")
+            .style("stop-color", "#5B4A3F")
             .style("stop-opacity", "1")
 
         vis.legend
@@ -190,7 +190,7 @@ class MapVis {
             .on('mouseout', function(event, d){
                 d3.select(this)
                     .attr('stroke-width', '1px')
-                    .attr('stroke','black')
+                    .attr('stroke','')
                     .style('fill', function(d,i) {
                     let assignColor = ''
                     vis.filteredData.forEach(state => {
