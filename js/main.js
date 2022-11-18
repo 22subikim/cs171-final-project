@@ -33,7 +33,9 @@ function initMainPage(dataArray) {
 
     // TODO - init map
     myMapVis = new MapVis('mapDiv', dataArray[0], dataArray[1]);
-    myMapVis = new BarVis('barDiv', dataArray[2]);
+    myBarVis = new BarVis('barDiv', dataArray[2]);
+    // myCircleVis = new CircleVis('circleDiv')
+    myRectVis = new RectVis('rectDiv')
 }
 
 

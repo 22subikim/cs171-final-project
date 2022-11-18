@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Covid Dashboard</title>
+    <title>Cancer Dashboard</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
@@ -61,6 +61,8 @@
                     </div>
                 </div>
 
+
+
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
                 <div class="align-self-center">
                     <h2>Age 10 | Cancer Mechanism</h2>
@@ -70,12 +72,14 @@
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: transparent;">
                 <div class="align-self-center">
                     <h2>Age 20 | Cancer Risk Factors</h2>
+                    <div id="circleDiv"></div>
                 </div>
             </div>
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
                 <div class="align-self-center">
                     <h2>Age 30 | Cancer Indicators</h2>
+                    <div id="rectDiv"></div>
                 </div>
             </div>
 
@@ -90,56 +94,8 @@
                     <h2>Age 50 | Live Longer!</h2>
                 </div>
             </div>
-                <!-- RIGHT -->
-<!--                <div class="col-5">-->
-<!--                    <div class="row"-->
-<!--                         style="height: 20%; background: lightgrey; padding-left: 0vh; padding-bottom: 1vh; padding-right: 1vh; padding-top: 1vh">-->
-<!--                        <div class="col"-->
-<!--                             style="border: thin solid grey; border-radius: 5px; background: rgba(64,64,64,0.4)">-->
-<!--                            <div class="row" style="height: 100%">-->
-<!--                                <div class="col-4">-->
-<!--                                    <div class="row justify-content-center" style="height: 100%">-->
-<!--                                        <button id="switchView" class="btn btn-light align-self-center" type="button"-->
-<!--                                                onclick="switchView()">switch view-->
-<!--                                        </button>-->
-
-<!--                                    </div>-->
-
-<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
-<!--                                <div class="col-8">-->
-<!--                                    <div class="row justify-content-center" style="height: 100%">-->
-<!--                                        <select id='categorySelector' class="custom-select align-self-center" style="width: 75%" onchange="categoryChange()">-->
-<!--                                            <option value="absCases" selected>Cases (absolute)</option>-->
-<!--                                            <option value="absDeaths">Deaths (absolute)</option>-->
-<!--                                            <option value="relCases">Cases (relative to population)</option>-->
-<!--                                            <option value="relDeaths">Deaths (relative to population)</option>-->
-<!--                                        </select>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-
-
-<!--                    <div class="row" style="height: 40%; background: lightgrey; padding-left: 0vh; padding-bottom: 1vh; padding-right: 1vh; padding-top: 0vh">-->
-<!--                        <div id="barTwoDiv" class="align-self-center" style="height: 100%; width:100%; border: thin solid grey; border-radius: 5px; background: rgba(64,64,64,0.4)">-->
-
-<!--                            &lt;!&ndash; TODO - (DELETE THE LINES BELOW ONCE YOU DISPLAY THE VISUALIZATION) &ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="row justify-content-center" style="height: 100%; width: 100%">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="align-self-center">TODO</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
             </div>
-
-
-<!--            <div class="row" style="height: 18vh; background: #bdbdbd; padding: 0; border: 0">-->
-<!--                <div id="brushDiv" style="height: 100%; width:100%;"></div>-->
-<!--            </div>-->
-
         </div>
     </div>
 
@@ -170,6 +126,8 @@
 <!-- OWN JS -->
 <script src="js/mapVis.js"></script>
 <script src="js/barVis.js"></script>
+<script src="js/circleVis.js"></script>
+<script src="js/rectVis.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
