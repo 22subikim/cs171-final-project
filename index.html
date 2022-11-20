@@ -34,6 +34,13 @@
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #5B4A3F;">
                 <div class="align-self-center">
                     <h5>However, do you know 1 in 3 cases of cancer can be prevented?</h5>
+                    <div class="row justify-content-center" style="height: 100%; padding: 30px">
+                        <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">
+                            <option value="one" selected>Option One</option>
+                            <option value="two">Option Two</option>
+                        </select>
+                    </div>
+                    <div id="matrixDiv"></div>
                 </div>
             </div>
 
@@ -128,6 +135,7 @@
 <script src="js/barVis.js"></script>
 <script src="js/circleVis.js"></script>
 <script src="js/rectVis.js"></script>
+<script src="js/matrixVis.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

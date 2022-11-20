@@ -36,6 +36,14 @@ function initMainPage(dataArray) {
     myBarVis = new BarVis('barDiv', dataArray[2]);
     myCircleVis = new CircleVis('circleDiv')
     myRectVis = new RectVis('rectDiv')
+    myMatrixVis = new MatrixVis('matrixDiv')
+}
+
+let selectedCategory =  document.getElementById('categorySelector').value;
+
+function categoryChange() {
+    selectedCategory =  document.getElementById('categorySelector').value;
+    myMatrixVis.wrangleData();
 }
 
 
