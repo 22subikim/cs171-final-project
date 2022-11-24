@@ -2,7 +2,14 @@ class MatrixVis {
 
     constructor(parentElement){
         this.parentElement = parentElement;
-
+        this.data = {'gender': 'Male: 52% Female 48%',
+                    'age70': 'Across Age: >70 58%',
+                    'age50':'Across Age: 50-69 35%',
+                    'age15':'Across Age: 15-49 7%',
+                    'lowest': 'Prostrate death rate is the lowest: 2.8%',
+                    'greatest': 'Liver death rate is the highest: 84.8%',
+                    'risk': 'Almost a quarter of all cancer death are due to smoking',
+                    'preventable': 'Between 30-50% of all cancer cases are preventable'}
         this.initVis()
     }
 

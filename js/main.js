@@ -39,12 +39,12 @@ function initMainPage(dataArray) {
     myMatrixVis = new MatrixVis('matrixDiv')
 }
 
-let selectedCategory =  document.getElementById('categorySelector').value;
-
-function categoryChange() {
-    selectedCategory =  document.getElementById('categorySelector').value;
-    myMatrixVis.wrangleData();
-}
+// let selectedCategory =  document.getElementById('categorySelector').value;
+//
+// function categoryChange() {
+//     selectedCategory =  document.getElementById('categorySelector').value;
+//     myMatrixVis.wrangleData();
+// }
 
 
 
