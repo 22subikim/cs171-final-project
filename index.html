@@ -36,52 +36,18 @@
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #5B4A3F;">
                 <div class="align-self-center">
-                    <h5>However, do you know 1 in 3 cases of cancer can be prevented?</h5>
-<!--                    <div class="row justify-content-center" style="height: 100%; padding: 30px">-->
-<!--                        <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">-->
-<!--                            <option value="one" selected>Option One</option>-->
-<!--                            <option value="two">Option Two</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                data-mdb-toggle="dropdown" aria-expanded="false">
-                            Choose a Category
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#" id='gender'>Gender</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Age &raquo;
-                                </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="age70">Greater than 70</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="age50">50 to 69</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="age15">15 to 49</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    By Type &raquo;
-                                </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="lowest">Lowest Death Rate</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="greatest">Highest Death Rate</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#" id="risk">Biggest Risk Factor</a></li>
-                            <li><a class="dropdown-item" href="#" id="preventable">Preventable</a></li>
-                        </ul>
+                    <h5>However, did you know 1 in 3 cases of cancer can be prevented?</h5>
+                    <div class="row justify-content-center" style="height: 100%; padding: 30px">
+                        <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">
+                            <option value="gender" selected>Gender</option>
+                            <option value="age70">Across Age: >70</option>
+                            <option value="age50">Across Age: 50-69</option>
+                            <option value="age15">Across Age: 15-49</option>
+                            <option value="lowest">By Type: Lowest Death Rate</option>
+                            <option value="highest">By Type: Highest Death Rate</option>
+                            <option value="risk">Biggest risk factor</option>
+                            <option value="preventable">Preventable</option>
+                        </select>
                     </div>
                     <div id="matrixDiv"></div>
                 </div>
