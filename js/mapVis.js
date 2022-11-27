@@ -140,7 +140,7 @@ class MapVis {
 
         vis.colorScale
             .domain([0,d3.max(vis.filteredData, d=>d['relative'])])
-        console.log(d3.max(vis.filteredData, d=>d['relative']))
+        // console.log(d3.max(vis.filteredData, d=>d['relative']))
 
         vis.xScale
             .domain([0,d3.max(vis.filteredData, d=>d['relative'])])

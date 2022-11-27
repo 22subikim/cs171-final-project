@@ -43,7 +43,7 @@ class MatrixVis {
     wrangleData() {
         let vis = this;
         vis.data = [...Array(100).keys()]
-        console.log(vis.data)
+        // console.log(vis.data)
 
         vis.updateVis();
     }
