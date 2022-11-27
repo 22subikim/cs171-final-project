@@ -73,22 +73,6 @@ class MatrixVis {
 
             vis.matrix.exit().remove()
 
-            vis.matrix2 = vis.svg.selectAll('.matrix-circles2')
-                .data([...Array(100).keys()])
-
-            vis.matrix2.enter()
-                .append('circle')
-                .attr('class', 'matrix-circles2')
-                .merge(vis.matrix2)
-                .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'transparent')
-
-            vis.matrix2.exit().remove()
-
             vis.pink = vis.svg.selectAll('.pink')
                 .data([...Array(48).keys()])
 
