@@ -42,12 +42,19 @@ class CircleVis {
             .attr('r',100)
 
         vis.svg.append('text')
-            .attr('x',vis.width/2 - 55)
-            .attr('y',vis.height/2 - 5)
-            .text('Click to see the')
+            .attr('x',vis.width/2)
+            .attr('y',vis.height/2 - 20)
+            .attr('text-anchor', 'middle')
+            .text('Click the bubbles')
         vis.svg.append('text')
-            .attr('x',vis.width/2 - 55)
-            .attr('y',vis.height/2 + 15)
+            .attr('x',vis.width/2)
+            .attr('y',vis.height/2)
+            .attr('text-anchor', 'middle')
+            .text('to see the')
+        vis.svg.append('text')
+            .attr('x',vis.width/2)
+            .attr('y',vis.height/2 + 20)
+            .attr('text-anchor', 'middle')
             .text('related cancers')
 
         let factors = ['exposure to radiation', 'obesity', 'tobacco', 'alcohol', 'viral infections', 'specific chemicals']
@@ -80,10 +87,11 @@ class CircleVis {
             .attr('stroke-width', 3)
             .attr('fill', 'transparent')
             .on('mouseover', function(event, d) {
+                let i = factors.indexOf(d)
                 vis.tooltip
                     .style('opacity', 1)
-                    .style('left', event.pageX + 100 + 'px')
-                    .style('top', event.pageY - 150 + 'px')
+                    .style('left', event.pageX + 40 + 'px')
+                    .style('top', event.pageY - 40 + 'px')
                     .html(`
                             <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding:20px; text-align:left">
                                 <p>${descriptions[d]}</p>
@@ -104,6 +112,7 @@ class CircleVis {
                     .append('circle')
                     .attr('class', 'factor-mini-circles')
                     .merge(vis.mini_circles)
+                    .style('opacity', 0)
                     .attr('r', 50)
                     .attr('cx', (d2, i2) => {
                         let i = factors.indexOf(d)
@@ -120,6 +129,9 @@ class CircleVis {
                     .attr('stroke', 'black')
                     .attr('stroke-width', 3)
                     .attr('fill', 'transparent')
+                    .transition()
+                    .duration(3000)
+                    .style('opacity', 1)
 
                 vis.mini_circles.exit().remove()
 
@@ -130,6 +142,7 @@ class CircleVis {
                     .append('text')
                     .attr('class', 'factor-mini-labels')
                     .merge(vis.mini_labels)
+                    .style('opacity', 0)
                     .attr('x', (d2, i2) => {
                         let i = factors.indexOf(d)
                         let factor_center_x = 300 * Math.cos(i * Math.PI / 3) + vis.width/2
@@ -145,6 +158,9 @@ class CircleVis {
                     .attr('font-size', 12)
                     .attr('text-anchor', 'middle')
                     .text(d => d)
+                    .transition()
+                    .duration(3000)
+                    .style('opacity', 1)
 
                 vis.mini_labels.exit().remove()
             })
