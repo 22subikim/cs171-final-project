@@ -29,10 +29,20 @@ h1 {
     text-align: center;
 }
 
+.h1-class {
+    font-size: 36px;
+    fill: #E85A50;
+}
+
 h2 {
     font-size: 24px;
     color: #5B4A3F;
     text-align: center;
+}
+
+.h2-class {
+    font-size: 24px;
+    fill: #5B4A3F;
 }
 
 h3 {
@@ -57,6 +67,12 @@ p {
     font-size: 16px;
     color:#5B4A3F;
     text-align: center;
+}
+
+.p-class {
+    font-family: verdana;
+    font-size: 16px;
+    fill:#5B4A3F;
 }
 
 .button-wrapper{

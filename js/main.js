@@ -39,6 +39,7 @@ function initMainPage(dataArray) {
     myRectVis = new RectVis('rectDiv')
     myMatrixVis = new MatrixVis('matrixDiv')
     myRadarVis = new RadarVis('radarDiv', dataArray[3])
+    myClockVis = new ClockVis('clockDiv')
 }
 
 let selectedCategory =  document.getElementById('categorySelector').value;
