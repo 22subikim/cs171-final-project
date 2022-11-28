@@ -32,12 +32,13 @@ class CircleVis {
         vis.tooltip = d3.select('body').append('div')
             .attr('class','tooltip')
             .attr('id', 'circleVisTooltip')
+            .style('width', vis.width / 4 + 'px')
 
         vis.svg.append('circle')
             .attr('cx',vis.width/2)
             .attr('cy',vis.height/2)
-            .attr('stroke','black')
-            .attr('stroke-width',3)
+            .attr('stroke','#88765E')
+            .attr('stroke-width',5)
             .attr('fill','transparent')
             .attr('r',100)
 
@@ -45,16 +46,19 @@ class CircleVis {
             .attr('x',vis.width/2)
             .attr('y',vis.height/2 - 20)
             .attr('text-anchor', 'middle')
+            .style('fill', '#5B4A3F')
             .text('Click the bubbles')
         vis.svg.append('text')
             .attr('x',vis.width/2)
             .attr('y',vis.height/2)
             .attr('text-anchor', 'middle')
+            .style('fill', '#5B4A3F')
             .text('to see the')
         vis.svg.append('text')
             .attr('x',vis.width/2)
             .attr('y',vis.height/2 + 20)
             .attr('text-anchor', 'middle')
+            .style('fill', '#5B4A3F')
             .text('related cancers')
 
         let factors = ['exposure to radiation', 'obesity', 'tobacco', 'alcohol', 'viral infections', 'specific chemicals']
@@ -83,17 +87,16 @@ class CircleVis {
             .attr('r', 80)
             .attr('cx', (d,i) => 300 * Math.cos(i * Math.PI / 3) + vis.width/2)
             .attr('cy', (d,i) => 300 * Math.sin(-1 * i * Math.PI / 3) + vis.height/2)
-            .attr('stroke', 'black')
+            .attr('stroke', '#88765E')
             .attr('stroke-width', 3)
-            .attr('fill', 'transparent')
+            .attr('fill', '#88765E')
             .on('mouseover', function(event, d) {
-                let i = factors.indexOf(d)
                 vis.tooltip
                     .style('opacity', 1)
                     .style('left', event.pageX + 40 + 'px')
                     .style('top', event.pageY - 40 + 'px')
                     .html(`
-                            <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding:20px; text-align:left">
+                            <div style="border: black; border-radius: 5px; background: #D8C3A4; padding:20px; text-align:left">
                                 <p>${descriptions[d]}</p>
                             </div>`)
             })
@@ -126,11 +129,11 @@ class CircleVis {
                         let n = related_cancers[d].length
                         return 150 * Math.sin(-2 * i2 * Math.PI / n) + factor_center_y
                     })
-                    .attr('stroke', 'black')
+                    .attr('stroke', '#D8C3A4')
                     .attr('stroke-width', 3)
-                    .attr('fill', 'transparent')
+                    .attr('fill', '#D8C3A4')
                     .transition()
-                    .duration(3000)
+                    .duration(1000)
                     .style('opacity', 1)
 
                 vis.mini_circles.exit().remove()
@@ -173,6 +176,7 @@ class CircleVis {
             .attr('x', (d,i) => 300 * Math.cos(i * Math.PI / 3) + vis.width/2)
             .attr('y', (d,i) => 300 * Math.sin(-1 * i * Math.PI / 3) + vis.height/2)
             .attr('text-anchor', 'middle')
+            .style('fill', 'white')
             .text(d => d)
 
         vis.svg.selectAll('.factor-lines')
@@ -184,7 +188,10 @@ class CircleVis {
             .attr('y1', (d,i) => vis.height/2 - 100 * Math.sin(i * Math.PI / 3))
             .attr('x2', (d,i) => 220 * Math.cos(i * Math.PI / 3) + vis.width/2)
             .attr('y2', (d,i) => 220 * Math.sin(-1 * i * Math.PI / 3) + vis.height/2)
-            .style('stroke', 'black')
+            .style('stroke', '#88765E')
             .style('stroke-width', 2)
+
+        vis.svg.selectAll('text')
+            .attr('font-family', 'verdana')
     }
 }
