@@ -46,7 +46,7 @@ class RadarVis {
             .attr('cy', vis.height / 2)
             .attr('r', d => d * 5)
             .attr('fill', 'none')
-            .attr('stroke', 'black')
+            .attr('stroke', '#88765E')
 
         vis.svg.selectAll('percentage-labels')
             .data(percentages)
@@ -57,6 +57,7 @@ class RadarVis {
             .attr('y', (d,i) => vis.height / 2 - d * 5 - 5)
             .attr('text-anchor', 'middle')
             .attr('font-size', 8)
+            .style('fill', '#5B4A3F')
             .text(d => `${d}%`)
 
         // draw line for each data point
@@ -69,7 +70,7 @@ class RadarVis {
             .attr('y1', vis.height / 2)
             .attr('x2', (d, i) => 200 * Math.cos(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2)
             .attr('y2', (d, i) => 200 * Math.sin(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2)
-            .style('stroke', 'black')
+            .style('stroke', '#88765E')
             .style('stroke-width', 2)
 
         vis.svg.selectAll('axis-labels')
@@ -87,7 +88,8 @@ class RadarVis {
                     return 'end'
                 }
             })
-            .attr('font-size', 9)
+            .attr('font-size', 8)
+            .style('fill', '#5B4A3F')
             .text(d => `${d["Measure"]}: ${d["Age-Adjusted Prevalence"]}%`)
 
         // draw polygon
@@ -108,9 +110,9 @@ class RadarVis {
         vis.svg.append('path')
             .datum(coords)
             .attr('d', line)
-            .attr('stroke', 'blue')
+            .attr('stroke', '#D8C3A4')
             .attr('stroke-width', 3)
-            .attr('fill', 'green')
+            .attr('fill', '#D8C3A4')
             .attr('opacity', 0.6)
 
     }
