@@ -63,7 +63,7 @@ class MatrixVis {
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
-                .attr('fill', 'blue')
+                .attr('fill', 'saddlebrown')
 
             vis.matrix.enter()
                 .append('text')
@@ -73,21 +73,20 @@ class MatrixVis {
 
             vis.matrix.exit().remove()
 
-            vis.pink = vis.svg.selectAll('.pink')
+            vis.background = vis.svg.selectAll('.background')
                 .data([...Array(48).keys()])
 
-            vis.pink.enter()
+            vis.background.enter()
                 .append('circle')
-                .attr('class', 'pink')
-                .merge(vis.pink)
+                .attr('class', 'background')
+                .merge(vis.background)
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 430)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
-                .attr('fill', 'pink')
-
-            vis.pink.exit().remove()
+                .attr('fill', '#5B4A3F')
+            vis.background.exit().remove()
 
 
         }
@@ -111,7 +110,6 @@ class MatrixVis {
                 .merge(vis.matrix)
                 .text(vis.displayText[selectedCategory])
 
-            vis.matrix.exit().remove()
 
             vis.background = vis.svg.selectAll('.background')
                 .data([...Array(100-58).keys()])
@@ -127,6 +125,7 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
 
+            vis.matrix.exit().remove()
             vis.background.exit().remove()
         }
 
