@@ -23,20 +23,55 @@
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: TRANSPARENT;">
                 <div class="align-self-center">
-                    <h1>LIFE RESTARTER</h1>
+                    <div id="clockDiv"></div>
+<!--                    <h1>LIFE RESTARTER</h1>-->
+<!--                    <p>Every 3 seconds, one person is killed by cancer</p>-->
+<!--                    <h2>609,360 deaths in 2022 within the U.S-->
+<!--                    </h2>-->
                 </div>
             </div>
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
                 <div class="align-self-center">
                     <h4>Do you know someone who got or died from cancer?</h4>
-                    <h1>'1 in 2 people will develop cancer in their lifetime'</h1>
+                    <div class="button-wrapper">
+                        <div class="button">Yes</div>
+                        <div class="button">No</div>
+                    </div>
+                    <p>
+                        You are not alone.(You are so lucky.) <br>
+                        Nearly everyone knows or has lost someone dear to them from this collection of diseases.
+
+                    </p>
+                    <h4 style="font-size: 16px;color: #5B4A3F;"> Every sixth death in the world is due to cancer.</h5>
+                        <h1 style="font-size: 36px;color: #E85A50;">'1 in 2 people will develop cancer in their lifetime'</h1>
+                        <p style="text-align: right;font-size: 12px;">-Prof. Peter Sasieni of Queen Mary University of London</p>
+
+
+
+                        <div class="info">
+                            <div class="text-info">
+                                if this grid represents the U.S. total deaths of Cancer in 2019...<br>
+                                <br>
+                                1. gender. male 0.52, female 0.48<br>
+                                2. across age. >70: 58%, 50-69: 35%, 15-49: 7%<br>
+                                3. by type: Prostate death rate is the lowest 2.8%<br>
+                                4. by type: Liver death rate is the highest 84.8%<br>
+                                5. most risky: Almost a quarter of all cancer deaths are due to smoking.<br>
+                                6. Between 30-50% of all cancer cases are preventable.
+
+                            </div>
+                            <div class="box"></div>
+                        </div>
                 </div>
             </div>
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #5B4A3F;">
                 <div class="align-self-center">
-                    <h5>However, did you know 1 in 3 cases of cancer can be prevented?</h5>
+                    <h5>However, did you know <span style="color: #E85A50;">1 in 3 cases </span> of cancer can be prevented?</h5>
+                    <p style="color: #F8F5F0;font-style:italic;    font-size: 14px;">Welcome to Life Restarter!<br>
+                        Choose your character and experience a different life.<br>
+                        Remember, try to escape from the cancer.</p>
                     <div class="row justify-content-center" style="height: 100%; padding: 30px">
                         <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">
                             <option value="gender" selected>Gender</option>
@@ -57,6 +92,10 @@
             <div class="row d-flex justify-content-center" style="height: 10vh; padding: 0; background: transparent;">
                 <div class="align-self-center">
                     <h2>Age 0 | Cancer Geography</h2>
+                    <p>
+                        You are born!
+                        <br>Please pick the country to want to be born.
+                    </p>
                 </div>
             </div>
 
@@ -64,42 +103,107 @@
             <!-- CONTENT -->
             <div class="row" style="height: 150vh; background:  transparent; padding: 0;">
                 <div class="col">
-                    <div class="row" style="height: 150vh; background:  transparent; padding: 1vh;">
+                    <div class="row" style="height: 120vh; background:  transparent; padding: 1vh;">
                         <div id="mapDiv"
                              style="height: 100%; width:100%; border:  transparent; border-radius: 5px; background:  transparent;">
                             <div id="year-slider"></div>
+
+                        </div>
+                        <div style="margin: 0 auto;text-align: center;">
+                            if > 200:  Unfortunately, this country is among the ones with highest cancer incidence.<br>
+                            if < 200. Congratulations!  this country is among the ones with lowest cancer incidence.<br>
+
+                            <span style="color: #E85A50;font-size: 24px;">There is a higher prevalence of cancer in higher-income countries</span> <br>
+
+                            where people are less likely do die of infectious diseases and causes of deaths that lead to very early deaths for people in poverty.<br>
+
+                            However, five-year survival rates – following diagnosis – are lower in poorer countries.<br>
+                            In high income countries survival rates are above 80% <br>
+                            while in many poor countries it is well below 60%.
                         </div>
                     </div>
+
+
                 </div>
-                </div>
+
+            </div>
 
 
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
                 <div class="align-self-center">
                     <h2>Age 10 | Cancer Mechanism</h2>
+                    <p>
+                        You went to primary school where you learned the basic knowledge of biology. <br>
+                        Today is the mid-term test  <br>
+                        please draw the growth of cancer cells.
+                    </p>
+
+                    <h4>
+                        Exponential growth matters a lot because the earlier tumors are smaller than later tumors.  </h4>
+                    <p style="font-size: 12px;"> If you let cancer cells divide more, the tumor size can become very large, very quickly.</p>
+
+
+
+                    <h3 style="color: #E85A50">The smaller the tumor</h4>
+                        <h3 style="color: #E85A50"> the easier it is for doctors to treat</h3>
+
                 </div>
             </div>
 
             <div class="row d-flex justify-content-center" style="height: 150vh; padding: 0; background: transparent;">
                 <div class="align-self-center">
                     <h2>Age 20 | Cancer Risk Factors</h2>
+
+                    <p style="    font-size: 12px;">You went to college and finally were legal to drink! <br>
+                        You are away from your parents and have the freedom to control you life.<br>
+                        Suddenly, you are faced with so many choices in life. <br>
+                        <span style="color: #5B4A3F;"> Check out the potential risk behind these choices.</span></p>
                     <div id="circleDiv"></div>
+
+                    <p>You can avoid some risk factors by stopping risky behaviors.
+                        These include using tobacco and alcohol, being overweight, and getting multiple sunburns.
+                    </p>
+
                 </div>
             </div>
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
                 <div class="align-self-center">
                     <h2>Age 30 | Cancer Indicators</h2>
+
+
+                    <p style="    font-size: 12px;"> You became a lawyer after graduating and get married. <br>
+                        In order to provide a good life for your kids, you work more than 60 hours per week. <br>
+                        One day you fainted in the bathroom, you don’t know if it is related with cancer... <br>
+                        <span style="color: #5B4A3F;">   Flip the cards to see the potential cancers from these symptoms.</span></p>
                     <div id="rectDiv"></div>
+
+                    <p>No symptom should be ignored
+
+                        Early warning signs of cancer are often similar to other common illnesses<br>
+                        making them easy to overlook. <br>
+                        Some common cancer symptoms include extreme fatigue, fever, and unexplained weight loss.
+                    </p>
+                    <h3 style="color: #E85A50">  The earlier treatment begins, the better the chance of full recovery.
+                    </h3>
                 </div>
             </div>
 
             <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #5B4A3F;">
                 <div class="align-self-center">
                     <h5>Age 40 | Cancer Screening</h5>
+                    <p style="color: #EEEAE1;">
+                        You started to take care of yourselves and went to gym twice a week. <br>
+                        However, one day your aunt is dignosed as terminal cancer. You are so regretful that you didn’t take her to do the screening. <br>
+                        Check out the data of the death from cancer. </p>
                     <div class="col-5">
-                        <div id="barDiv" class="align-self-center" style="height: 100%; width:100%; border: transparent; border-radius: 5px; background:  transparent">
+                        <div style="height: 100%;width:100%;color: #FFFFFF;">
+                            Cancer screening is looking for cancer before a person has any symptoms.
+                            Screening tests can help find cancer at an early stage, before symptoms appear. When abnormal tissue or cancer is found early, it may be easier to treat or cure. By the time symptoms appear, the cancer may have grown and spread. This can make the cancer harder to treat or cure.
+                            It is important to remember that when your doctor suggests a screening test, it does not always mean he or she thinks you have cancer. Screening tests are done when you have no cancer symptoms.
+                        </div>
+                        <div id="barDiv" class="align-self-center" style="height: 100%; width:50%; border: transparent; border-radius: 5px; background:  transparent">
                         </div>
                     </div>
                 </div>
@@ -111,10 +215,10 @@
                     <div id="radarDiv"></div>
                 </div>
             </div>
-                </div>
-            </div>
         </div>
     </div>
+</div>
+</div>
 
 </div>
 
@@ -145,6 +249,7 @@
 <script src="js/rectVis.js"></script>
 <script src="js/matrixVis.js"></script>
 <script src="js/radarVis.js"></script>
+<script src="js/clockVis.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
