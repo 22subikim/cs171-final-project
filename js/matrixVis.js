@@ -43,7 +43,6 @@ class MatrixVis {
     wrangleData() {
         let vis = this;
         vis.data = [...Array(100).keys()]
-        // console.log(vis.data)
 
         vis.updateVis();
     }
@@ -64,12 +63,6 @@ class MatrixVis {
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
-
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
-
 
             vis.matrix.exit().remove()
 
@@ -105,11 +98,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
-
 
             vis.background = vis.svg.selectAll('.background')
                 .data([...Array(100-58).keys()])
@@ -144,12 +132,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .attr('x',460)
-                .attr('y',100)
-                .text(vis.displayText[selectedCategory])
 
             vis.matrix.exit().remove()
 
@@ -185,10 +167,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
 
             vis.matrix.exit().remove()
 
@@ -223,10 +201,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
 
             vis.matrix.exit().remove()
 
@@ -262,11 +236,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
-
             vis.matrix.exit().remove()
 
             vis.background = vis.svg.selectAll('.background')
@@ -301,10 +270,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
 
             vis.matrix.exit().remove()
 
@@ -340,10 +305,6 @@ class MatrixVis {
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
 
-            vis.matrix.enter()
-                .append('text')
-                .merge(vis.matrix)
-                .text(vis.displayText[selectedCategory])
 
             vis.matrix.exit().remove()
 
