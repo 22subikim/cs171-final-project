@@ -5,7 +5,7 @@ class RadarVis {
     constructor(parentElement, prevalenceData){
         this.parentElement = parentElement;
         this.prevalenceData = prevalenceData;
-        this.displayData = prevalenceData.slice(0, 5);
+        this.displayData = this.prevalenceData;
         // console.log(this.displayData)
 
         this.initVis()
@@ -31,12 +31,12 @@ class RadarVis {
         vis.svg.append('g')
             .attr('class', 'title bar-title')
             .append('text')
-            .text('Bar Chart')
+            .text('Radar Chart')
             .attr('transform', `translate(${vis.width / 2}, 0)`)
             .attr('text-anchor', 'middle');
 
         // draw circle for every 10 percent
-        let percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        let percentages = [5, 10, 15, 20, 25, 30, 35, 40];
         vis.svg.selectAll('percentage-circles')
             .data(percentages)
             .enter()
@@ -44,9 +44,9 @@ class RadarVis {
             .attr('class', 'percentage-circles')
             .attr('cx', vis.width / 2)
             .attr('cy', vis.height / 2)
-            .attr('r', d => d * 2)
+            .attr('r', d => d * 5)
             .attr('fill', 'none')
-            .attr('stroke', 'black')
+            .attr('stroke', '#88765E')
 
         vis.svg.selectAll('percentage-labels')
             .data(percentages)
@@ -54,22 +54,23 @@ class RadarVis {
             .append('text')
             .attr('class', 'percentage-labels')
             .attr('x', vis.width / 2)
-            .attr('y', (d,i) => vis.height / 2 - 20 * i - 20)
+            .attr('y', (d,i) => vis.height / 2 - d * 5 - 5)
             .attr('text-anchor', 'middle')
             .attr('font-size', 8)
-            .text(d => d)
+            .style('fill', '#5B4A3F')
+            .text(d => `${d}%`)
 
         // draw line for each data point
         vis.svg.selectAll('axis-lines')
-            .data([0,1,2,3,4])
+            .data([...Array(vis.displayData.length).keys()])
             .enter()
             .append('line')
             .attr('class', 'axis-lines')
             .attr('x1', vis.width / 2)
             .attr('y1', vis.height / 2)
-            .attr('x2', (d, i) => 200 * Math.cos(2 * i * Math.PI / 5 - Math.PI / 3) + vis.width/2)
-            .attr('y2', (d, i) => 200 * Math.sin(2 * i * Math.PI / 5 - Math.PI / 3) + vis.width/2)
-            .style('stroke', 'black')
+            .attr('x2', (d, i) => 200 * Math.cos(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2)
+            .attr('y2', (d, i) => 200 * Math.sin(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2)
+            .style('stroke', '#88765E')
             .style('stroke-width', 2)
 
         vis.svg.selectAll('axis-labels')
@@ -77,26 +78,27 @@ class RadarVis {
             .enter()
             .append('text')
             .attr('class', 'axis-labels')
-            .attr('x', (d,i) => 225 * Math.cos(2 * i * Math.PI / 5 - Math.PI / 3) + vis.width/2)
-            .attr('y', (d,i) => 225 * Math.sin(2 * i * Math.PI / 5 - Math.PI / 3) + vis.width/2)
+            .attr('x', (d,i) => 225 * Math.cos(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2)
+            .attr('y', (d,i) => 225 * Math.sin(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2)
             .attr('text-anchor', (d,i) => {
-                if (i < 3) {
+                if (i < vis.displayData.length / 2) {
                     return 'start'
                 }
                 else {
                     return 'end'
                 }
             })
-            .attr('font-size', 9)
+            .attr('font-size', 8)
+            .style('fill', '#5B4A3F')
             .text(d => `${d["Measure"]}: ${d["Age-Adjusted Prevalence"]}%`)
 
         // draw polygon
         let coords = []
         vis.displayData.forEach((d, i) => {
-            let prevalenceDoubled = 2 * d["Age-Adjusted Prevalence"]
+            let prevalenceDoubled = 5 * d["Age-Adjusted Prevalence"]
             coords.push({
-                x: prevalenceDoubled *  Math.cos(2 * i * Math.PI / 5 - Math.PI / 3) + vis.width/2,
-                y: prevalenceDoubled *  Math.sin(2 * i * Math.PI / 5 - Math.PI / 3) + vis.width/2
+                x: prevalenceDoubled *  Math.cos(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2,
+                y: prevalenceDoubled *  Math.sin(2 * i * Math.PI / vis.displayData.length - Math.PI / 6) + vis.width/2
             })
         })
 
@@ -108,9 +110,9 @@ class RadarVis {
         vis.svg.append('path')
             .datum(coords)
             .attr('d', line)
-            .attr('stroke', 'blue')
+            .attr('stroke', '#D8C3A4')
             .attr('stroke-width', 3)
-            .attr('fill', 'green')
+            .attr('fill', '#D8C3A4')
             .attr('opacity', 0.6)
 
     }
