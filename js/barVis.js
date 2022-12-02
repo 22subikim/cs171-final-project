@@ -1,6 +1,5 @@
 // Reference for stage definition: https://www.cancer.gov/publications/dictionaries/cancer-terms/
 class BarVis {
-
     constructor(parentElement, cancerData){
         this.parentElement = parentElement;
         this.cancerData = cancerData;
@@ -13,10 +12,10 @@ class BarVis {
         let vis = this;
 
         vis.margin = {top: 20, right: 20, bottom: 20, left: 40};
-        // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
-        vis.width = 1000
-        vis.height = 300
+        vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+        vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+        // vis.width = 1000
+        // vis.height = 300
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -64,11 +63,8 @@ class BarVis {
         vis.colorScale = d3.scaleSequential()
             .interpolator(d3.interpolateRgb("#FFFFFF", "#88765E"))
 
-
-
         vis.updateVis();
     }
-
 
     updateVis(){
         let vis = this;
@@ -130,7 +126,6 @@ class BarVis {
                     .style("top", 0)
                     .html(``);
             })
-
 
         vis.svg.select(".x-axis").call(vis.xAxis);
         vis.svg.select(".y-axis").call(vis.yAxis);

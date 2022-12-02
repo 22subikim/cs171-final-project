@@ -1,340 +1,503 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Cancer Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="./css/nouislider.css" rel="stylesheet">
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
+
 <body>
 
 <!-- WRAPPER -->
-<div class="container-fluid" style="height: 100vh; padding-top: 1vh">
-    <div class="row">
-        <div class="col-10 offset-1" style="border:  transparent; border-radius: 5px;">
+<div class="container-fluid" style="height: 100vh;padding: 0;">
+    <div class="" >
+        <div class="col- 10" style="border:  transparent; border-radius: 5px;" >
 
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: TRANSPARENT;">
+            <div class="d-flex justify-content-center"  style="height: 100vh; padding: 0; background: TRANSPARENT;">
                 <div class="align-self-center">
                     <div id="clockDiv"></div>
-<!--                    <h1>LIFE RESTARTER</h1>-->
-<!--                    <p>Every 3 seconds, one person is killed by cancer</p>-->
-<!--                    <h2>609,360 deaths in 2022 within the U.S-->
-<!--                    </h2>-->
                 </div>
             </div>
 
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
-                <div class="align-self-center">
-                    <h4>Do you know someone who got or died from cancer?</h4>
+            <div class="row d-flex justify-content-center"  style="height: 100vh; padding: 0; background: #F8F5F0;">
+                <div class="align-self-center" data-aos="fade-up"
+                     data-aos-duration="3000">
+                    <h4 style="font-size: 20px; margin-top: 15px;   font-weight: 400;">Do you know someone who got or died from
+                        cancer?</h4>
                     <div class="button-wrapper">
-                        <div class="button">Yes</div>
-                        <div class="button">No</div>
+                        <div class="button" onclick="clickShowWord('yes')">Yes</div>
+                        <div class="button" onclick="clickShowWord('no')">No</div>
                     </div>
-                    <p>
-                        You are not alone.(You are so lucky.) <br>
-                        Nearly everyone knows or has lost someone dear to them from this collection of diseases.
-
+                    <p style="font-size: 14px;margin-bottom:5px;     position: relative;
+                        height: 18px;
+                        display: flex;
+                        justify-content: center; ">
+                            <span class="showYes" style="opacity: 0;transition:all 1s; position: absolute;">You are not
+                                alone.</span>
+                        <span class="showNo" style="opacity: 0;transition:all 1s;position: absolute;">You are so
+                                lucky.</span>
                     </p>
-                    <h4 style="font-size: 16px;color: #5B4A3F;"> Every sixth death in the world is due to cancer.</h5>
-                        <h1 style="font-size: 36px;color: #E85A50;">'1 in 2 people will develop cancer in their lifetime'</h1>
-                        <p style="text-align: right;font-size: 12px;">-Prof. Peter Sasieni of Queen Mary University of London</p>
+                    <div class="haveCancer" style="opacity: 0;transition: all 2s;">
 
+                        <p style="font-size: 14px;margin-bottom:5px;">
 
+                            Nearly everyone knows or has lost someone dear to them from this collection of diseases.
 
-                        <div class="info">
-                            <div class="text-info">
-                                if this grid represents the U.S. total deaths of Cancer in 2019...<br>
-                                <br>
-                                1. gender. male 0.52, female 0.48<br>
-                                2. across age. >70: 58%, 50-69: 35%, 15-49: 7%<br>
-                                3. by type: Prostate death rate is the lowest 2.8%<br>
-                                4. by type: Liver death rate is the highest 84.8%<br>
-                                5. most risky: Almost a quarter of all cancer deaths are due to smoking.<br>
-                                6. Between 30-50% of all cancer cases are preventable.
+                        </p>
+                        <h4 style="font-size: 16px;color: #5B4A3F;"> Every sixth death in the world is due to cancer.
+                            </h4>
+                            <h2 style="font-size: 36px;color: #E85A50;line-height: 50px;
+                                margin-top: 30px;">'1 in 2 people will develop cancer in their
+                                lifetime'</h2>
+                            <p style="text-align: right;font-size: 12px;">-Prof. Peter Sasieni of Queen Mary University
+                                of London</p>
 
-                            </div>
-                            <div class="box"></div>
-                        </div>
-                </div>
-            </div>
+                            <div class="info">
+                                <div class="text-info">
+                                    if this grid represents the U.S. total deaths of Cancer in 2019...<br>
+                                    <br>
+                                    1. gender. male 0.52, female 0.48<br>
+                                    2. across age. >70: 58%, 50-69: 35%, 15-49: 7%<br>
+                                    3. by type: Prostate death rate is the lowest 2.8%<br>
+                                    4. by type: Liver death rate is the highest 84.8%<br>
+                                    5. most risky: Almost a quarter of all cancer deaths are due to smoking.<br>
+                                    6. Between 30-50% of all cancer cases are preventable.
 
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #5B4A3F;">
-                <div class="align-self-center">
-                    <h5>However, did you know <span style="color: #E85A50;">1 in 3 cases </span> of cancer can be prevented?</h5>
-                    <p style="color: #F8F5F0;font-style:italic;    font-size: 14px;">Welcome to Life Restarter!<br>
-                        Choose your character and experience a different life.<br>
-                        Remember, try to escape from the cancer.</p>
-                    <div class="row justify-content-center" style="height: 100%; padding: 30px">
-                        <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">
-                            <option value="gender" selected>Gender</option>
-                            <option value="age70">Across Age: >70</option>
-                            <option value="age50">Across Age: 50-69</option>
-                            <option value="age15">Across Age: 15-49</option>
-                            <option value="lowest">By Type: Lowest Death Rate</option>
-                            <option value="highest">By Type: Highest Death Rate</option>
-                            <option value="risk">Biggest risk factor</option>
-                            <option value="preventable">Preventable</option>
-                        </select>
-                    </div>
-                    <div id="matrixDiv"></div>
-                </div>
-            </div>
-
-            <!-- HEADING -->
-            <div class="row d-flex justify-content-center" style="height: 10vh; padding: 0; background: transparent;">
-                <div class="align-self-center">
-                    <h2>Age 0 | Cancer Geography</h2>
-                    <p>
-                        You are born!
-                        <br>Please pick the country to want to be born.
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- CONTENT -->
-            <div class="row" style="height: 150vh; background:  transparent; padding: 0;">
-                <div class="col">
-                    <div class="row" style="height: 120vh; background:  transparent; padding: 1vh;">
-                        <div id="mapDiv"
-                             style="height: 100%; width:100%; border:  transparent; border-radius: 5px; background:  transparent;">
-                            <div id="year-slider"></div>
-
-                        </div>
-                        <div style="margin: 0 auto;text-align: center;">
-                            if > 200:  Unfortunately, this country is among the ones with highest cancer incidence.<br>
-                            if < 200. Congratulations!  this country is among the ones with lowest cancer incidence.<br>
-
-                            <span style="color: #E85A50;font-size: 24px;">There is a higher prevalence of cancer in higher-income countries</span> <br>
-
-                            where people are less likely do die of infectious diseases and causes of deaths that lead to very early deaths for people in poverty.<br>
-
-                            However, five-year survival rates – following diagnosis – are lower in poorer countries.<br>
-                            In high income countries survival rates are above 80% <br>
-                            while in many poor countries it is well below 60%.
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
-                <div class="align-self-center">
-                    <h2>Age 10 | Cancer Mechanism</h2>
-                    <p>
-                        You went to primary school where you learned the basic knowledge of biology. <br>
-                        Today is the mid-term test  <br>
-                        please draw the growth of cancer cells.
-                    </p>
-
-                    <h4>
-                        Exponential growth matters a lot because the earlier tumors are smaller than later tumors.  </h4>
-                    <p style="font-size: 12px;"> If you let cancer cells divide more, the tumor size can become very large, very quickly.</p>
-
-
-
-                    <h3 style="color: #E85A50">The smaller the tumor</h4>
-                        <h3 style="color: #E85A50"> the easier it is for doctors to treat</h3>
-
-                </div>
-            </div>
-
-            <div class="row d-flex justify-content-center" style="height: 150vh; padding: 0; background: transparent;">
-                <div class="align-self-center">
-                    <h2>Age 20 | Cancer Risk Factors</h2>
-
-                    <p style="    font-size: 12px;">You went to college and finally were legal to drink! <br>
-                        You are away from your parents and have the freedom to control you life.<br>
-                        Suddenly, you are faced with so many choices in life. <br>
-                        <span style="color: #5B4A3F;"> Check out the potential risk behind these choices.</span></p>
-                    <div id="circleDiv"></div>
-
-                    <p>You can avoid some risk factors by stopping risky behaviors.
-                        These include using tobacco and alcohol, being overweight, and getting multiple sunburns.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #F8F5F0;">
-                <div class="align-self-center">
-                    <h2>Age 30 | Cancer Indicators</h2>
-
-
-                    <p style="    font-size: 12px;"> You became a lawyer after graduating and get married. <br>
-                        In order to provide a good life for your kids, you work more than 60 hours per week. <br>
-                        One day you fainted in the bathroom, you don’t know if it is related with cancer... <br>
-                        <span style="color: #5B4A3F;">   Flip the cards to see the potential cancers from these symptoms.</span></p>
-<!--                    <div id="rectDiv"></div>-->
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Unexplained Weight Loss</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>Unexplained weight loss is associated with cancers of the esophagus, stomach, lung, or pancreas.</p>
-                                    </div>
                                 </div>
+                                <div class="box">
+                                    <div class="row justify-content-center" style="height: 100%; padding: 20px">
+                                        <select id='categorySelector' class="custom-select align-self-center"
+                                                style="width: 50%" onchange="categoryChange()">
+                                            <option value="gender" selected>Gender</option>
+                                            <option value="age70">Across Age: >70</option>
+                                            <option value="age50">Across Age: 50-69</option>
+                                            <option value="age15">Across Age: 15-49</option>
+                                            <option value="lowest">By Type: Lowest Death Rate</option>
+                                            <option value="highest">By Type: Highest Death Rate</option>
+                                            <option value="risk">Biggest risk factor</option>
+                                            <option value="preventable">Preventable</option>
+                                        </select>
+                                    </div>
+                                    <div id="matrixDiv"></div>
                                 </div>
                             </div>
-                            <div class="col"><div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Fever</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>Generally, all cancer patients will have a fever at some point as the tumor affects the immune system.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div></div>
-                            <div class="col"><div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Fatigue</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>It’s a significant cancer symptom common in the early stages of leukemia and some stomach or colon cancers.
 
-                                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="operation-box" style="display: none;">
+                <div class="row d-flex justify-content-center"   style="height: 100vh; padding: 0; background: #5B4A3F;">
+                    <div class="align-self-center" data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <h1 style="color: #EEEAE1;margin-top:80px">However, did you know <span style="color: #E85A50;">1
+                                    in 3 cases </span> of cancer can be
+                            prevented?</h1>
+                            <p style="color: #F8F5F0;font-style:italic;    font-size: 14px;margin-top:36px">Welcome to
+                                Life Restarter!<br>
+                                Choose your character and experience a different life.<br>
+                                Remember, try to escape from the cancer.</p>
+
+                            <div class="image-box">
+                                <img onclick="selectImg('girl')" class="choose-girl" src="./image/girl-40.png" alt="">
+                                <img onclick="selectImg('boy')" class="choose-boy" src="./image/boy-40.png"
+                                     style="transform: scaleX(-1);" alt="">
+                            </div>
+
+                            <div class="operation-button">
+                                <div class="oper-button-wrapper" onclick="loadingPage()">
+                                    <div class="cover"></div>
+                                    <div class="text-box">
+                                        Life Restart
                                     </div>
                                 </div>
-                            </div></div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="information-wrapper" data-aos="fade-up"
+                 data-aos-duration="3000">
+                <!-- HEADING -->
+                <div class="image-box">
+                    <img src="./image/boy-0.png" class="sex-show" alt="" style="height:50px">
+                </div>
+                <div class="row d-flex justify-content-center"
+                     style="height: 10vh; padding: 0; background: transparent;">
+
+
+                    <div class="align-self-center">
+
+                        <h2>Age 0 | Cancer Geography</h2>
+                        <p style="margin-top: 20px;">
+                            You are born!
+                            <br>
+                            <span style="font-weight: bold;"> Please pick the country to want to be born.</span>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- CONTENT -->
+                <div class="row"  style=" background:  transparent; padding: 0;margin-top: 30px;">
+                    <div class="col">
+                        <div class="row" data-aos="fade-up"
+                             data-aos-duration="3000" style=" background:  transparent; padding: 1vh;">
+                            <div id="mapDiv"
+                                 style="height: 100%; width:100%; border:  transparent; border-radius: 5px; background:  transparent;">
+                                <div id="year-slider"></div>
+
+                            </div>
+                            <div style="margin: 40px auto 60px;text-align: center;">
+                                <h3 style="font-size:18px;color: #88765E;font-weight: 700;"> if > 200:
+                                    Unfortunately,
+                                    this country is among the ones with
+                                    highest cancer
+                                    incidence.</h3>
+                                <h3 style="font-size:18px;color: #88765E;font-weight: 700;"> if < 200.
+                                    Congratulations! this country is among the ones with lowest cancer
+                                    incidence.</h3> <h1 style="margin-top: 30px;"> There is a higher prevalence
+                                of cancer
+                                in higher-income countries</h1>
+
+                                <p style="line-height: 45px;margin-bottom: 0;"> where people are less likely
+                                    do
+                                    die of infectious diseases and causes of
+                                    deaths that
+                                    lead to very early deaths for people in poverty.<br>
+
+                                    However, five-year survival rates – following diagnosis – are lower in
+                                    poorer
+                                    countries.</p>
+                                <h2 style="color: #88765E;font-weight: 700;">In high income countries
+                                    survival
+                                    rates are above <span style="font-size: 35px;">80% </span></h2>
+                                <h2 style="color: #88765E;font-weight: 700;"> while in many poor countries
+                                    it is
+                                    well below <span style="font-size: 35px;">60%</span> . </h2>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="flip-card">
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="  justify-content-center"
+                     style="height: 110vh; padding: 1px 0 0 0 ; background: #F8F5F0;">
+                    <div data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <div class="image-box" style="margin-bottom: 15px;">
+                            <img src="./image/boy-10.png" class="sex-show" alt="" style="height:80px;">
+                        </div>
+                        <div class="align-self-center" >
+                            <h2>Age 10 | Cancer Mechanism</h2>
+                            <p style="margin-top: 20px;color: #88765E;">
+                                You went to primary school where you learned the basic knowledge of biology. <br>
+                                Today is the mid-term test <br>
+                                <span style="font-weight: bold;color:#5B4A3F">please draw the growth of cancer
+                                    cells.</span>
+                            </p>
+
+
+                            <div class="line-wrapper">
+                                <div class="" id="line-chart" style="height: 360px;width:40%">
+                                    <div class="line-button">
+                                        <button onclick="RedrawLine()">Redraw</button>
+                                        <button onclick="Actual()">Show Actual</button>
+                                    </div>
+                                </div>
+                                <div style="width:40%;text-align: right;height: 400px;">
+                                    <h1 style="line-height: 32px;text-align: right;color: #88765E;font-size:24px">
+                                        Exponential Growth</h1>
+                                    <p style="text-align: right;line-height: 22px;">Rather than responding appropriately
+                                        to
+                                        the signals that control normal cell behavior, cancer cells <span
+                                                style="font-weight:bold"> grow and divide in an uncontrolled manner</span>,
+                                        invading normal tissues and organs and eventually spreading throughout the body.
+                                        <br> <br> In only 20 rounds of cell division, one cell grows to be more than one
+                                        million cells!
+                                    </p>
+
+                                    <img style="height:200px;margin:10px auto 0" src="./image/image 41.png"
+                                         alt="">
+
+                                </div>
+
+                            </div>
+
+
+
+                            <h4 style="margin-top: 25px;font-size:20px">
+                                Exponential growth matters a lot because the earlier tumors are smaller than later
+                                tumors.
+                            </h4>
+                            <p style="font-size: 14px;margin-top: 20px;"> If you let cancer cells divide more, the tumor
+                                size can become very
+                                large, very quickly.</p>
+
+
+
+                            <h4 style="color: #E85A50;font-size: 36px;">The smaller the tumor</h4>
+                                <h4 style="color: #E85A50;font-size: 36px;"> the easier it is for doctors to treat</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row d-flex justify-content-center"
+                     style="height: 200vh; padding: 0; background: transparent;">
+
+                    <div class="align-self-center" data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <div class="image-box">
+                            <img src="./image/boy-20.png" class="sex-show" alt="" style="height:100px">
+                        </div>
+                        <h2>Age 20 | Cancer Risk Factors</h2>
+
+                        <p style=" line-height: 22px; margin-top: 25px;  font-size: 14px;">You went to college and
+                            finally were legal to drink! <br>
+                            You are away from your parents and have the freedom to control you life.<br>
+                            Suddenly, you are faced with so many choices in life. <br>
+                            <span style="color: #5B4A3F;font-weight: bold;font-size: 14px;"> Check out the potential
+                                    risk behind these choices.</span>
+                        </p>
+                        <div id="circleDiv" style="height: 125vh;width: 125vh;margin: 0 auto;"></div>
+
+                        <p> You can avoid some risk factors by stopping risky behaviors.
+                            <br> These include using tobacco and alcohol, being overweight, and getting multiple
+                            sunburns.
+                        </p>
+                        <h1>Tobacco use can cause cancer almost anywhere in your body.
+
+                        </h1>
+
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center"  style=" padding: 0 0 80px 0; background: #F8F5F0;">
+                    <div class="align-self-center" data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <div class="image-box">
+                            <img src="./image/boy-30.png" class="sex-show" alt="" style="height:100px">
+                        </div>
+                        <h2>Age 30 | Cancer Indicators</h2>
+
+
+                        <p style="  line-height: 22px; margin-top: 25px;    font-size: 14px;"> You became a lawyer
+                            after
+                            graduating and get married. <br>
+                            In order to provide a good life for your kids, you work more than 60 hours per week.
+                            <br>
+                            One day you fainted in the bathroom, you don’t know if it is related with cancer... <br>
+                            <span style="color: #5B4A3F;font-weight: bold;"> Flip the cards to see the potential
+                                    cancers
+                                    from these
+                                    symptoms.</span>
+                        </p>
+<!--                        <div id="rectDiv"></div>-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <p>Unexplained Weight Loss</p>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <p>Unexplained weight loss is associated with cancers of the esophagus, stomach, lung, or pancreas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"><div class="flip-card">
                                     <div class="flip-card-inner">
                                         <div class="flip-card-front">
-                                            <p>Pain</p>
+                                            <p>Fever</p>
                                         </div>
                                         <div class="flip-card-back">
-                                            <p>Particular pains are usually signs of cancer, such as testicular or bone cancer.
+                                            <p>Generally, all cancer patients will have a fever at some point as the tumor affects the immune system.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div></div>
+                                <div class="col"><div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <p>Fatigue</p>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p>It’s a significant cancer symptom common in the early stages of leukemia and some stomach or colon cancers.
 
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div></div>
                             </div>
-                            <div class="col"><div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Skin Changes</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>The odds of eliminating various types of skin cancer are incredibly high when detected early.
+                            <div class="row">
+                                <div class="col">
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <p>Pain</p>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <p>Particular pains are usually signs of cancer, such as testicular or bone cancer.
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div></div>
-                            <div class="col"><div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Changes in Bowel Habits</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>Long-term constipation, diarrhea, or a change in stool size may be a sign of colon cancer.
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="flip-card">
+                                <div class="col"><div class="flip-card">
                                     <div class="flip-card-inner">
                                         <div class="flip-card-front">
-                                            <p>Unusual Bleeding or Discharge</p>
+                                            <p>Skin Changes</p>
                                         </div>
                                         <div class="flip-card-back">
-                                            <p>Coughing up blood could be a sign of lung cancer. Dark, black, or blood in the stool could be a symptom of rectal or colon cancer.
+                                            <p>The odds of eliminating various types of skin cancer are incredibly high when detected early.
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div></div>
+                                <div class="col"><div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <p>Changes in Bowel Habits</p>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p>Long-term constipation, diarrhea, or a change in stool size may be a sign of colon cancer.
 
 
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div></div>
                             </div>
-                            <div class="col"><div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Anemia</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>Cancers like leukemia, lymphoma, and multiple myeloma can damage your marrow.
+                            <div class="row">
+                                <div class="col">
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <p>Unusual Bleeding or Discharge</p>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <p>Coughing up blood could be a sign of lung cancer. Dark, black, or blood in the stool could be a symptom of rectal or colon cancer.
 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div></div>
-                            <div class="col"><div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <p>Other Symptoms</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <p>Some other symptoms to look out for are breast changes, neurological problems, eating problems, and etc.</p>
+
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div></div>
+                                <div class="col"><div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <p>Anemia</p>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p>Cancers like leukemia, lymphoma, and multiple myeloma can damage your marrow.
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div></div>
+                                <div class="col"><div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <p>Other Symptoms</p>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p>Some other symptoms to look out for are breast changes, neurological problems, eating problems, and etc.</p>
+                                        </div>
+                                    </div>
+                                </div></div>
+                            </div>
+                        </div>
+
+                        <h3>No symptom should be ignored</h3>
+
+                            <p> Early warning signs of cancer are often similar to other common illnesses<br>
+                                making them easy to overlook. <br>
+                                Some common cancer symptoms include extreme fatigue, fever, and unexplained weight
+                                loss.
+                            </p>
+                            <h3 style="color: #E85A50"> The earlier treatment begins, the better the chance of full
+                                recovery.
+                            </h3>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center"
+                     style="height: 100vh; padding: 0; background: #5B4A3F;">
+                    <div class="" data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <div class="image-box">
+                            <img src="./image/boy-40.png" class="sex-show" alt="" style="height:100px">
+                        </div>
+                        <h5>Age 40 | Cancer Screening</h5>
+                        <p style="color: #EEEAE1;line-height: 22px; margin-top: 25px;">
+                            You started to take care of yourselves and went to gym twice a week. <br>
+                            However, one day your aunt is dignosed as terminal cancer. You are so regretful that you
+                            didn’t take her to do the screening. <br>
+                            <span style="font-weight: bold;"> Check out the data of the death from cancer.</span>
+                        </p>
+                        <div style="display: flex;justify-content: space-around;margin-top: 80px;">
+                            <div style="height: 100%;width:40%;color: #FFFFFF;font-size: 18px;
+            line-height: 27px;
+            margin-top: 30px;">
+                                Cancer screening is looking for cancer before a person has any symptoms.<br>
+                                Screening tests can help find cancer at an early stage, before symptoms appear. When
+                                abnormal tissue or cancer is found early, it may be easier to treat or cure. By the
+                                time
+                                symptoms appear, the cancer may have grown and spread. This can make the cancer
+                                harder
+                                to treat or cure.<br>
+                                It is important to remember that when your doctor suggests a screening test, it does
+                                not
+                                always mean he or she thinks you have cancer. Screening tests are done when you have
+                                no
+                                cancer symptoms.
+                            </div>
+                            <div id="barDiv" class="align-self-center"
+                                 style="height: 450px; width:35%; border: transparent; border-radius: 5px; background:  transparent">
+                            </div>
                         </div>
                     </div>
-
-                    <p>No symptom should be ignored
-
-                        Early warning signs of cancer are often similar to other common illnesses<br>
-                        making them easy to overlook. <br>
-                        Some common cancer symptoms include extreme fatigue, fever, and unexplained weight loss.
-                    </p>
-                    <h3 style="color: #E85A50">  The earlier treatment begins, the better the chance of full recovery.
-                    </h3>
                 </div>
-            </div>
 
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: #5B4A3F;">
-                <div class="align-self-center">
-                    <h5>Age 40 | Cancer Screening</h5>
-                    <p style="color: #EEEAE1;">
-                        You started to take care of yourselves and went to gym twice a week. <br>
-                        However, one day your aunt is dignosed as terminal cancer. You are so regretful that you didn’t take her to do the screening. <br>
-                        Check out the data of the death from cancer. </p>
-                    <div class="col-5">
-                        <div style="height: 100%;width:100%;color: #FFFFFF;">
-                            Cancer screening is looking for cancer before a person has any symptoms.
-                            Screening tests can help find cancer at an early stage, before symptoms appear. When abnormal tissue or cancer is found early, it may be easier to treat or cure. By the time symptoms appear, the cancer may have grown and spread. This can make the cancer harder to treat or cure.
-                            It is important to remember that when your doctor suggests a screening test, it does not always mean he or she thinks you have cancer. Screening tests are done when you have no cancer symptoms.
+                <div class="row d-flex justify-content-center"
+                     style="height: 100vh; padding: 0; background: transparent;">
+                    <div class="align-self-center" data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <div class="image-box">
+                            <img src="./image/boy-50.png" class="sex-show" alt="" style="height:100px">
                         </div>
-                        <div id="barDiv" class="align-self-center" style="height: 100%; width:50%; border: transparent; border-radius: 5px; background:  transparent">
-                        </div>
+                        <h2>Age 50 | Live Longer!</h2>
+                        <div id="radarDiv"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="row d-flex justify-content-center" style="height: 100vh; padding: 0; background: transparent;">
-                <div class="align-self-center">
-                    <h2>Age 50 | Live Longer!</h2>
-                    <div id="radarDiv"></div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -363,6 +526,7 @@
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 
 <!-- OWN JS -->
+<script src="js/lineVis.js"></script>
 <script src="js/mapVis.js"></script>
 <script src="js/barVis.js"></script>
 <script src="js/circleVis.js"></script>
@@ -371,5 +535,10 @@
 <script src="js/radarVis.js"></script>
 <script src="js/clockVis.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+    AOS.init();
+</script>
 </body>
+
 </html>

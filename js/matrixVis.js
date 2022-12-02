@@ -2,14 +2,15 @@ class MatrixVis {
 
     constructor(parentElement){
         this.parentElement = parentElement;
-        this.displayText = {'gender': 'Male: 52% Female 48%',
-                    'age70': 'Across Age: >70 58%',
-                    'age50':'Across Age: 50-69 35%',
-                    'age15':'Across Age: 15-49 7%',
-                    'lowest': 'Prostrate death rate is the lowest: 3%',
-                    'highest': 'Liver death rate is the highest: 85%',
-                    'risk': 'Almost a quarter of all cancer death are due to smoking',
-                    'preventable': 'Between 30-50% of all cancer cases are preventable'}
+        this.displayText = {
+            'gender': 'Male: 52% Female 48%',
+            'age70': 'Across Age: >70 58%',
+            'age50':'Across Age: 50-69 35%',
+            'age15':'Across Age: 15-49 7%',
+            'lowest': 'Prostrate death rate is the lowest: 3%',
+            'highest': 'Liver death rate is the highest: 85%',
+            'risk': 'Almost a quarter of all cancer death are due to smoking',
+            'preventable': 'Between 30-50% of all cancer cases are preventable'}
         this.initVis()
     }
 
@@ -20,21 +21,21 @@ class MatrixVis {
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
         // vis.width = 600;
-        vis.height = 600;
+        vis.height = 400;
 
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append('g')
-            .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
+            // .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
 
-        vis.svg.append('g')
-            .attr('class', 'title bar-title')
-            .append('text')
-            .text('Matrix Chart')
-            .attr('transform', `translate(${vis.width / 2}, 0)`)
-            .attr('text-anchor', 'middle');
+        // vis.svg.append('g')
+        //     .attr('class', 'title bar-title')
+        //     .append('text')
+        //     .text('Matrix Chart')
+        //     .attr('transform', `translate(${vis.width / 2}, 0)`)
+        //     .attr('text-anchor', 'middle');
 
         vis.wrangleData();
 
@@ -58,8 +59,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -74,8 +75,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -92,8 +93,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -107,8 +108,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -126,8 +127,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -143,8 +144,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -161,8 +162,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -178,8 +179,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -195,8 +196,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -212,8 +213,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -230,8 +231,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -246,8 +247,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -264,8 +265,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -281,8 +282,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')
@@ -299,8 +300,8 @@ class MatrixVis {
                 .attr('class', 'matrix-circles')
                 .merge(vis.matrix)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 160)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 100)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', 'saddlebrown')
@@ -316,8 +317,8 @@ class MatrixVis {
                 .attr('class', 'background')
                 .merge(vis.background)
                 .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 430)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 370)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 2)
                 .attr('fill', '#5B4A3F')

@@ -2,7 +2,6 @@
 *          MapVis          *
 * * * * * * * * * * * * * */
 
-
 class MapVis {
 
     constructor(parentElement, geoData, covidData){
@@ -20,12 +19,14 @@ class MapVis {
     initVis() {
         let vis = this;
 
-
         vis.margin = {top: 20, right: 100, bottom: 20, left: 100};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+        // document.getElementById(vis.parentElement).style.height =
+        //     (vis.width * 610) / 970 + 50 + "px";
+        vis.height = (vis.width * 610) / 970;
         // vis.width = 600
-        vis.height = 1000
+        // vis.height = 1000
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width)

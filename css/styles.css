@@ -38,41 +38,48 @@ h2 {
     font-size: 24px;
     color: #5B4A3F;
     text-align: center;
+    opacity: 0.8;
 }
 
 .h2-class {
     font-size: 24px;
     fill: #5B4A3F;
+    opacity: 0.8;
 }
 
 h3 {
     font-size: 24px;
     color: #5B4A3F;
     text-align: center;
+    opacity: 0.8;
 }
 
 h4 {
     font-size: 16px;
     color: #5B4A3F;
     text-align: center;
+    opacity: 0.8;
 }
 
 h5 {
     font-size: 24px;
     color: #F8F5F0;
     text-align: center;
+    opacity: 0.8;
 }
 p {
     font-family: verdana;
     font-size: 16px;
     color:#5B4A3F;
     text-align: center;
+    opacity: 0.8;
 }
 
 .p-class {
     font-family: verdana;
     font-size: 16px;
     fill:#5B4A3F;
+    opacity: 0.8;
 }
 
 .button-wrapper{
@@ -96,11 +103,12 @@ p {
     align-items: center;
     justify-content: space-between;
     width: 70vw;
-    margin-top: 100px;
+    /*margin-top: 100px;*/
 
 }
 .info .text-info{
     width: 50%;
+    margin-top: 50px;
     color: #5B4A3F !important;
 }
 .box{
@@ -150,4 +158,88 @@ p {
     background-color: #D8C3A4;
     /*color: white;*/
     transform: rotateY(180deg);
+}
+
+.line-button{
+    text-align: right;
+    margin:0 60px 15px 0;
+}
+.line-button button{
+    width: 100px;
+    height: 33px;
+    color: white;
+    background-color: rgba(136, 118, 94);
+    border-radius: 5px;
+    border: none;
+    margin-left: 30px;
+}
+
+.line-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.image-box {
+    width: 90%;
+    text-align: center;
+    margin: 35px auto 25px;
+}
+
+.image-box img{
+    height: 100px;
+    padding: 5px;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.image-box img:nth-child(2){
+    margin-left: 50px;
+}
+
+img.active{
+    border: 1px solid #88765E;
+}
+
+.oper-button-wrapper{
+    width: 270px;
+    height: 75px;
+    position: relative;
+    background-color: #88765E;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 80px auto 0;
+}
+
+.text-box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    color: #ffffff;
+    line-height: 75px;
+    font-size: 36px;
+    text-align: center;
+}
+
+.cover{
+    width: 100%;
+    height: 100%;
+    background-color: #0d99ff;
+    position: absolute;
+    left: -100%;
+    transition: all 5s;
+
+    z-index: 0;
+}
+
+.information-wrapper{
+    display: none;
+}
+
+#year-slider {
+    margin-left: 20%;
+    margin-right: 20%;
 }
