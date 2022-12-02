@@ -1,5 +1,4 @@
 class CircleVis {
-
     constructor(parentElement){
         this.parentElement = parentElement;
 
@@ -10,24 +9,24 @@ class CircleVis {
         let vis = this;
 
         vis.margin = {top: 20, right: 20, bottom: 20, left: 40};
-        // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
-        vis.width = 1000;
-        vis.height = 1000;
+        vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+        vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+        // vis.width = 500 - vis.margin.left - vis.margin.right;
+        // vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append('g')
-            .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
+            // .attr('transform', `translate (${vis.margin.left + 220}, ${vis.margin.top + 200})`);
 
-        vis.svg.append('g')
-            .attr('class', 'title bar-title')
-            .append('text')
-            .text('Circle Chart')
-            .attr('transform', `translate(${vis.width / 2}, 0)`)
-            .attr('text-anchor', 'middle');
+        // vis.svg.append('g')
+        //     .attr('class', 'title bar-title')
+        //     .append('text')
+        //     .text('Circle Chart')
+        //     .attr('transform', `translate(${vis.width / 2}, 0)`)
+        //     .attr('text-anchor', 'middle');
 
         vis.tooltip = d3.select('body').append('div')
             .attr('class','tooltip')
@@ -40,7 +39,7 @@ class CircleVis {
             .attr('stroke','#88765E')
             .attr('stroke-width',5)
             .attr('fill','transparent')
-            .attr('r',100)
+            .attr('r', 100)
 
         vis.svg.append('text')
             .attr('x',vis.width/2)
