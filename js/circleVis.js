@@ -8,7 +8,7 @@ class CircleVis {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 20, right: 20, bottom: 20, left: 40};
+        vis.margin = {top: 20, right: 20, bottom: 20, left: 20};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
         // vis.width = 500 - vis.margin.left - vis.margin.right;
@@ -19,7 +19,7 @@ class CircleVis {
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append('g')
-            // .attr('transform', `translate (${vis.margin.left + 220}, ${vis.margin.top + 200})`);
+            .attr('transform', `translate(${vis.margin.left}, ${vis.margin.top})`)
 
         // vis.svg.append('g')
         //     .attr('class', 'title bar-title')
