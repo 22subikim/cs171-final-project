@@ -4,9 +4,7 @@ class MatrixVis {
         this.parentElement = parentElement;
         this.displayText = {
             'gender': 'Male: 52% Female 48%',
-            'age70': 'Across Age: >70 58%',
-            'age50':'Across Age: 50-69 35%',
-            'age15':'Across Age: 15-49 7%',
+            'age': 'Across Age: >70 58%, 50-69 35%, 15-49 7%',
             'lowest': 'Prostrate death rate is the lowest: 3%',
             'highest': 'Liver death rate is the highest: 85%',
             'risk': 'Almost a quarter of all cancer death are due to smoking',
@@ -61,9 +59,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * 30 + 100)
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
+                .attr('fill', '#5B4A3F')
 
             vis.matrix.exit().remove()
 
@@ -77,14 +73,12 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 370)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
+                .attr('fill', '#88765E')
             vis.background.exit().remove()
 
 
         }
-        else if (selectedCategory == 'age70') {
+        else if (selectedCategory == 'age') {
             vis.matrix = vis.svg.selectAll('.matrix-circles')
                 .data([...Array(58).keys()])
 
@@ -95,13 +89,47 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * 30 + 100)
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
+                .attr('fill', '#5B4A3F')
+
+            vis.middleAge = vis.svg.selectAll('.middleAge')
+                .data([...Array(30).keys()])
+
+            vis.middleAge.enter()
+                .append('circle')
+                .attr('class', 'middleAge')
+                .merge(vis.middleAge)
+                .attr('r', 10)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 230)
+                .attr('fill', '#E85A50')
+
+            vis.middleAge2 = vis.svg.selectAll('.middleAge2')
+                .data([...Array(2).keys()])
+
+            vis.middleAge2.enter()
+                .append('circle')
+                .attr('class', 'middleAge2')
+                .merge(vis.middleAge2)
+                .attr('r', 10)
+                .attr('cx', (d,i) => (i % 10) * -30 + 130)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 320)
+                .attr('fill', '#E85A50')
+
+            vis.middleAge3 = vis.svg.selectAll('.middleAge3')
+                .data([...Array(2).keys()])
+
+            vis.middleAge3.enter()
+                .append('circle')
+                .attr('class', 'middleAge3')
+                .merge(vis.middleAge3)
+                .attr('r', 10)
+                .attr('cx', (d,i) => (i % 10) * -30 + 370)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 200)
+                .attr('fill', '#E85A50')
 
 
             vis.background = vis.svg.selectAll('.background')
-                .data([...Array(100-58).keys()])
+                .data([...Array(8).keys()])
 
             vis.background.enter()
                 .append('circle')
@@ -110,83 +138,13 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 370)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
+                .attr('fill', '#88765E')
 
             vis.matrix.exit().remove()
             vis.background.exit().remove()
+            vis.middleAge.exit().remove()
         }
 
-        else if (selectedCategory == 'age50') {
-            vis.matrix = vis.svg.selectAll('.matrix-circles')
-                .data([...Array(35).keys()])
-
-            vis.matrix.enter()
-                .append('circle')
-                .attr('class', 'matrix-circles')
-                .merge(vis.matrix)
-                .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 100)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
-
-
-            vis.matrix.exit().remove()
-
-            vis.background = vis.svg.selectAll('.background')
-                .data([...Array(100-35).keys()])
-
-            vis.background.enter()
-                .append('circle')
-                .attr('class', 'background')
-                .merge(vis.background)
-                .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 370)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
-
-            vis.background.exit().remove()
-        }
-
-        else if (selectedCategory == 'age15') {
-            vis.matrix = vis.svg.selectAll('.matrix-circles')
-                .data([...Array(7).keys()])
-
-            vis.matrix.enter()
-                .append('circle')
-                .attr('class', 'matrix-circles')
-                .merge(vis.matrix)
-                .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * 30 + 100)
-                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
-
-
-            vis.matrix.exit().remove()
-
-            vis.background = vis.svg.selectAll('.background')
-                .data([...Array(100-7).keys()])
-
-            vis.background.enter()
-                .append('circle')
-                .attr('class', 'background')
-                .merge(vis.background)
-                .attr('r', 10)
-                .attr('cx', (d,i) => (i % 10) * -30 + 370)
-                .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
-
-            vis.background.exit().remove()
-        }
         else if (selectedCategory == 'lowest') {
             vis.matrix = vis.svg.selectAll('.matrix-circles')
                 .data([...Array(3).keys()])
@@ -198,9 +156,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * 30 + 100)
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
+                .attr('fill', '#5B4A3F')
 
 
             vis.matrix.exit().remove()
@@ -215,9 +171,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 370)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
+                .attr('fill', 'white')
 
             vis.background.exit().remove()
         }
@@ -233,9 +187,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * 30 + 100)
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
+                .attr('fill', '#5B4A3F')
 
             vis.matrix.exit().remove()
 
@@ -249,9 +201,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 370)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
+                .attr('fill','white')
 
             vis.background.exit().remove()
         }
@@ -267,9 +217,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * 30 + 100)
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
+                .attr('fill', '#5B4A3F')
 
 
             vis.matrix.exit().remove()
@@ -284,16 +232,14 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 370)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
+                .attr('fill', 'white')
 
             vis.background.exit().remove()
         }
 
         else if (selectedCategory == 'preventable') {
             vis.matrix = vis.svg.selectAll('.matrix-circles')
-                .data([...Array(50).keys()])
+                .data([...Array(30).keys()])
 
             vis.matrix.enter()
                 .append('circle')
@@ -302,9 +248,33 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * 30 + 100)
                 .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 50)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', 'saddlebrown')
+                .attr('fill', '#5B4A3F')
+
+            vis.matrix2 = vis.svg.selectAll('.matrix2-circles')
+                .data([...Array(10).keys()])
+
+            vis.matrix2.enter()
+                .append('circle')
+                .attr('class', 'matrix-circles2')
+                .merge(vis.matrix2)
+                .attr('r', 10)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 140)
+                .attr('opacity',0.6)
+                .attr('fill', '#5B4A3F')
+
+            vis.matrix3 = vis.svg.selectAll('.matrix3-circles')
+                .data([...Array(10).keys()])
+
+            vis.matrix3.enter()
+                .append('circle')
+                .attr('class', 'matrix-circles2')
+                .merge(vis.matrix3)
+                .attr('r', 10)
+                .attr('cx', (d,i) => (i % 10) * 30 + 100)
+                .attr('cy', (d,i) => Math.floor(i / 10) * 30 + 170)
+                .attr('opacity',0.3)
+                .attr('fill', '#5B4A3F')
 
 
             vis.matrix.exit().remove()
@@ -319,9 +289,7 @@ class MatrixVis {
                 .attr('r', 10)
                 .attr('cx', (d,i) => (i % 10) * -30 + 370)
                 .attr('cy', (d,i) => Math.floor(i / 10) * -30 + 320)
-                .attr('stroke', 'black')
-                .attr('stroke-width', 2)
-                .attr('fill', '#5B4A3F')
+                .attr('fill', 'white')
 
             vis.background.exit().remove()
         }
