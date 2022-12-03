@@ -106,6 +106,50 @@ p {
     /*margin-top: 100px;*/
 
 }
+
+.left-martrix{
+    width: 40%;
+    height: 710vh;
+}
+.martix-step{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0.1;
+}
+.legend-item{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.legend-item .icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.martix-step p{
+    text-align: left;
+}
+.right-martrix{
+    width: 35%;
+
+    height: 100vh;
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .info .text-info{
     width: 50%;
     margin-top: 50px;
@@ -156,6 +200,7 @@ p {
 /* Style the back side */
 .flip-card-back {
     background-color: #D8C3A4;
+    /*color: white;*/
     transform: rotateY(180deg);
 }
 
@@ -241,4 +286,8 @@ img.active{
 #year-slider {
     margin-left: 20%;
     margin-right: 20%;
+}
+
+.myCircle{
+    transition: all .5s;
 }

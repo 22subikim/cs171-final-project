@@ -90,6 +90,7 @@ class RadarVis {
             })
             .attr('font-size', 8)
             .style('fill', '#5B4A3F')
+            .style('font-size','16px')
             .text(d => `${d["Measure"]}: ${d["Age-Adjusted Prevalence"]}%`)
 
         // draw polygon
