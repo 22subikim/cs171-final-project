@@ -156,7 +156,6 @@ p {
 /* Style the back side */
 .flip-card-back {
     background-color: #D8C3A4;
-    /*color: white;*/
     transform: rotateY(180deg);
 }
 
