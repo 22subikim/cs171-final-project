@@ -34,13 +34,13 @@ class MapVis {
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
 
         // add title
-        vis.svg.append('g')
-            .attr('class', 'title')
-            .attr('id', 'map-title')
-            .append('text')
-            .text('Cancer Map')
-            .attr('transform', `translate(${vis.width / 2}, 20)`)
-            .attr('text-anchor', 'middle');
+        // vis.svg.append('g')
+        //     .attr('class', 'title')
+        //     .attr('id', 'map-title')
+        //     .append('text')
+        //     .text('Cancer Map')
+        //     .attr('transform', `translate(${vis.width / 2}, 20)`)
+        //     .attr('text-anchor', 'middle');
 
         vis.usa = topojson.feature(vis.geoData, vis.geoData.objects.states).features
 

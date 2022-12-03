@@ -24,12 +24,12 @@ class BarVis {
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
 
         // add title
-        vis.svg.append('g')
-            .attr('class', 'title bar-title')
-            .append('text')
-            .text('Bar Chart')
-            .attr('transform', `translate(${vis.width / 2}, 0)`)
-            .attr('text-anchor', 'middle');
+        // vis.svg.append('g')
+        //     .attr('class', 'title bar-title')
+        //     .append('text')
+        //     .text('Bar Chart')
+        //     .attr('transform', `translate(${vis.width / 2}, 0)`)
+        //     .attr('text-anchor', 'middle');
 
         // tooltip
         vis.tooltip = d3.select("body").append('div')

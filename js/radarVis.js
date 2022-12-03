@@ -28,12 +28,12 @@ class RadarVis {
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
 
         // add title
-        vis.svg.append('g')
-            .attr('class', 'title bar-title')
-            .append('text')
-            .text('Radar Chart')
-            .attr('transform', `translate(${vis.width / 2}, 0)`)
-            .attr('text-anchor', 'middle');
+        // vis.svg.append('g')
+        //     .attr('class', 'title bar-title')
+        //     .append('text')
+        //     .text('Radar Chart')
+        //     .attr('transform', `translate(${vis.width / 2}, 0)`)
+        //     .attr('text-anchor', 'middle');
 
         // draw circle for every 10 percent
         let percentages = [5, 10, 15, 20, 25, 30, 35, 40];
