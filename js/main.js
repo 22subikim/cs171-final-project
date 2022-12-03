@@ -27,7 +27,6 @@ function initMainPage(dataArray) {
     myMapVis = new MapVis("mapDiv", dataArray[0], dataArray[1]);
     myBarVis = new BarVis("barDiv", dataArray[2]);
     myCircleVis = new CircleVis("circleDiv");
-    myRectVis = new RectVis("rectDiv");
     myRadarVis = new RadarVis('radarDiv', dataArray[3]);
 
     lintVis = new LineVis("line-chart");
