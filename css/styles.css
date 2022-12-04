@@ -2,7 +2,6 @@
     position: absolute;
     text-align: center;
     font: 12px sans-serif;
-    /*  pointer-events: none;	This line needs to be removed */
 }
 .tooltip h3,h4 {
     text-align: left;
@@ -103,8 +102,6 @@ p {
     align-items: center;
     justify-content: space-between;
     width: 70vw;
-    /*margin-top: 100px;*/
-
 }
 
 .left-martrix{
@@ -133,7 +130,6 @@ p {
     display: inline-block;
     margin-right: 10px;
 }
-
 
 .martix-step p{
     text-align: left;

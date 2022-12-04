@@ -6,7 +6,6 @@ class RadarVis {
         this.parentElement = parentElement;
         this.prevalenceData = prevalenceData;
         this.displayData = this.prevalenceData;
-        // console.log(this.displayData)
 
         this.initVis()
     }
@@ -15,8 +14,6 @@ class RadarVis {
         let vis = this;
 
         vis.margin = {top: 20, right: 20, bottom: 20, left: 20};
-        // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
         vis.width = 800
         vis.height = 800
 
@@ -26,14 +23,6 @@ class RadarVis {
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append('g')
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
-
-        // add title
-        // vis.svg.append('g')
-        //     .attr('class', 'title bar-title')
-        //     .append('text')
-        //     .text('Radar Chart')
-        //     .attr('transform', `translate(${vis.width / 2}, 0)`)
-        //     .attr('text-anchor', 'middle');
 
         // draw circle for every 10 percent
         let percentages = [5, 10, 15, 20, 25, 30, 35, 40];

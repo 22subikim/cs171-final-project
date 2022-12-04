@@ -21,26 +21,13 @@ class MapVis {
 
         vis.margin = {top: 20, right: 100, bottom: 20, left: 100};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
-        // document.getElementById(vis.parentElement).style.height =
-        //     (vis.width * 610) / 970 + 50 + "px";
         vis.height = (vis.width * 610) / 970;
-        // vis.width = 600
-        // vis.height = 1000
+
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width)
             .attr("height", vis.height)
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
-
-        // add title
-        // vis.svg.append('g')
-        //     .attr('class', 'title')
-        //     .attr('id', 'map-title')
-        //     .append('text')
-        //     .text('Cancer Map')
-        //     .attr('transform', `translate(${vis.width / 2}, 20)`)
-        //     .attr('text-anchor', 'middle');
 
         vis.usa = topojson.feature(vis.geoData, vis.geoData.objects.states).features
 
@@ -141,7 +128,6 @@ class MapVis {
 
         vis.colorScale
             .domain([0,d3.max(vis.filteredData, d=>d['relative'])])
-        // console.log(d3.max(vis.filteredData, d=>d['relative']))
 
         vis.xScale
             .domain([0,d3.max(vis.filteredData, d=>d['relative'])])
@@ -160,7 +146,6 @@ class MapVis {
                 }
 
             })
-            // console.log(assignColor)
             return assignColor
         })
 
@@ -203,7 +188,6 @@ class MapVis {
                     return assignColor
 
                 })
-
 
                 vis.tooltip
                     .style("opacity", 0)

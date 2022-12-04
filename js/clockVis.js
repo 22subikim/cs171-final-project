@@ -11,8 +11,6 @@ class ClockVis {
         let vis = this;
 
         vis.margin = {top: 20, right: 20, bottom: 20, left: 40};
-        // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
         vis.width = 1000;
         vis.height = 1000;
 
@@ -116,7 +114,6 @@ class ClockVis {
     }
 
     updateClockHands() {
-        let vis = this;
         const date = new Date();
         date.toLocaleDateString('en-US', {timeZone: 'America/New_York'})
         let seconds = date.getSeconds()
@@ -148,9 +145,7 @@ class ClockVis {
 
     updateNumDeaths() {
         let vis = this
-
         vis.numDeaths += 1
-
         vis.numDeathsText.text(`${vis.numDeaths} deaths in 2022 within the US`)
     }
 }

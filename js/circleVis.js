@@ -11,8 +11,6 @@ class CircleVis {
         vis.margin = {top: 20, right: 20, bottom: 20, left: 20};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
-        // vis.width = 500 - vis.margin.left - vis.margin.right;
-        // vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -21,18 +19,12 @@ class CircleVis {
             .append('g')
             .attr('transform', `translate(${vis.margin.left}, ${vis.margin.top})`)
 
-        // vis.svg.append('g')
-        //     .attr('class', 'title bar-title')
-        //     .append('text')
-        //     .text('Circle Chart')
-        //     .attr('transform', `translate(${vis.width / 2}, 0)`)
-        //     .attr('text-anchor', 'middle');
-
         vis.tooltip = d3.select('body').append('div')
             .attr('class','tooltip')
             .attr('id', 'circleVisTooltip')
             .style('width', vis.width / 4 + 'px')
 
+        // center circle
         vis.svg.append('circle')
             .attr('cx',vis.width/2)
             .attr('cy',vis.height/2)
@@ -60,6 +52,7 @@ class CircleVis {
             .style('fill', '#5B4A3F')
             .text('related cancers')
 
+        // data
         let factors = ['exposure to radiation', 'obesity', 'tobacco', 'alcohol', 'viral infections', 'specific chemicals']
         let descriptions = {
             'exposure to radiation': 'Solar radiation, UV radiation and use of UV-emitting tanning devices is carcinogenic to humans.',
@@ -70,7 +63,7 @@ class CircleVis {
             'specific chemicals': 'Some carcinogens cause cancer by changing a cell\'s DNA.'
         }
         let related_cancers = {
-            'exposure to radiation': [],
+            'exposure to radiation': ['basal cell carcinoma', 'squamous cell carcinoma', 'melanoma'],
             'obesity': ['breast cancer', 'uterine cancer', 'prostate cancer', 'pancreatic cancer', 'gallbladder cancer', 'thyroid cancer', 'colorectal cancer'],
             'tobacco': ['bladder', 'blood (acute myeloid leukemia)', 'cervix', 'colon and rectum', 'esophagus', 'kidney and renal pelvis', 'liver', 'lungs, bronchi, and trachea', 'mouth and throat'],
             'alcohol': ['head and neck cancers', 'liver cancer', 'esophageal cancer', 'breast cancer', 'colorectal cancer'],
@@ -78,6 +71,7 @@ class CircleVis {
             'specific chemicals': ['liver cancer', 'bladder', 'skin cancer', 'nasopharynx', 'lung cancer']
         }
 
+        // factor circles
         vis.svg.selectAll('.factor-circles')
             .data(factors)
             .enter()
@@ -167,6 +161,7 @@ class CircleVis {
                 vis.mini_labels.exit().remove()
             })
 
+        // factor labels
         vis.svg.selectAll('.factor-labels')
             .data(factors)
             .enter()
@@ -178,6 +173,7 @@ class CircleVis {
             .style('fill', 'white')
             .text(d => d)
 
+        // factor lines
         vis.svg.selectAll('.factor-lines')
             .data(factors)
             .enter()

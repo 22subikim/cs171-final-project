@@ -24,7 +24,6 @@ function initMainPage(dataArray) {
   // log data
   // console.log('check out the data', dataArray);
 
-  // TODO - init map
   myMapVis = new MapVis("mapDiv", dataArray[0], dataArray[1]);
   myBarVis = new BarVis("barDiv", dataArray[2]);
   myCircleVis = new CircleVis("circleDiv");
@@ -33,13 +32,6 @@ function initMainPage(dataArray) {
   lintVis = new LineVis("line-chart");
 
   AOS.init();
-}
-
-// let selectedCategory = document.getElementById("categorySelector").value;
-
-function categoryChange() {
-  selectedCategory = document.getElementById("categorySelector").value;
-  myMatrixVis.wrangleData();
 }
 
 function RedrawLine() {
