@@ -21,7 +21,7 @@ class MapVis {
 
         vis.margin = {top: 20, right: 100, bottom: 20, left: 100};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+        // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
         // document.getElementById(vis.parentElement).style.height =
         //     (vis.width * 610) / 970 + 50 + "px";
         vis.height = (vis.width * 610) / 970;
