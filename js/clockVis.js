@@ -21,13 +21,6 @@ class ClockVis {
             .append('g')
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
 
-        vis.svg.append('g')
-            .attr('class', 'title bar-title')
-            .append('text')
-            .text('Clock')
-            .attr('transform', `translate(${vis.width / 2}, 0)`)
-            .attr('text-anchor', 'middle');
-
         // add text
         vis.svg.append('text')
             .attr('class', 'h1-class')
