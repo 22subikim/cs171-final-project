@@ -12,22 +12,22 @@ Our project aims to raise awareness about cancer and its onset, providing statis
 
 ## Project Structure
 ---
-* css/
-  * style.css: custom styles
-  * nouislider.css: slider style for map visualization
-* data/ 
-  * Prevalence.csv: age-adjusted prevalence for different measures
-  * SurvivalByStage.csv: survival rates for different stages of cancer
-  * USCSTrendMap.csv: cancer age-adjusted rate, case count, population for states (1999-2019) for all types of cancer
-  * data_wrangling.py: data wrangling for SurvivalByStage.csv
-* image: contains icons for website
-* js/
-  * barVis.js: code for age 40 visualization
-  * circleVis.js: code for age 20 visualization
-  * clockVis.js: clock animation on opening page
-  * lineVis.js: code for age 10 visualization
-  * main.js: main file 
-  * mapVis.js: code for age 0 visualization
-  * matrix2Vis.js: code for cancer demographics visualization
-  * nouislider.js: library for slider on map visualization
-  * radarVis.js: code for age 50 visualization
+* `css/`
+  * `style.css`: custom styles
+  * `nouislider.css`: slider style for map visualization
+* `data/` 
+  * `Prevalence.csv`: age-adjusted prevalence for different measures
+  * `SurvivalByStage.csv`: survival rates for different stages of cancer
+  * `USCSTrendMap.csv`: cancer age-adjusted rate, case count, population for states (1999-2019) for all types of cancer
+  * `data_wrangling.py`: data wrangling for SurvivalByStage.csv
+* `image/`: contains icons for website
+* `js/`
+  * `barVis.js`: code for age 40 visualization
+  * `circleVis.js`: code for age 20 visualization
+  * `clockVis.js`: clock animation on opening page
+  * `lineVis.js`: code for age 10 visualization
+  * `main.js`: main file 
+  * `mapVis.js`: code for age 0 visualization
+  * `matrix2Vis.js`: code for cancer demographics visualization
+  * `nouislider.js`: library for slider on map visualization
+  * `radarVis.js`: code for age 50 visualization
